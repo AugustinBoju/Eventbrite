@@ -21,6 +21,8 @@ User.create(
   last_name: Faker::Name.last_name
 )
 
+puts "User 1"
+
 User.create(
   email: "bojuaugustin2@yopmail.com",
   encrypted_password: "123456",
@@ -29,6 +31,8 @@ User.create(
   last_name: Faker::Name.last_name
 )
 
+puts "User 2"
+
 Event.create(
   start_date: "2020-04-06",
   duration: 90,
@@ -36,11 +40,12 @@ Event.create(
   description: "Vernis et sage du vernissage",
   price: 20,
   location: "Paris intra-muros",
-  admin_id: User.last.id
 )
+
+puts "Event vernissage"
 
 Attendance.create(
   stripe_customer_id: "123456",
-  user_id: User.first.id,
-  event_id: Event.first.id
 )
+
+puts "Attendance"
