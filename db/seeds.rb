@@ -42,7 +42,25 @@ Event.create(
   location: "Paris intra-muros",
 )
 
-puts "Event vernissage"
+Event.create(
+  start_date: "2020-04-06",
+  duration: 100,
+  title: "Coquillage",
+  description: "Des coquillages partout, créez le votre",
+  price: 700,
+  location: "Nantes",
+)
+
+Event.create(
+  start_date: "2020-04-06",
+  duration: 2200,
+  title: "Course a pied",
+  description: "Courir pour le plaisir et pour souffrir",
+  price: 180,
+  location: "Porto_Vecchio",
+)
+
+puts "Events"
 
 Attendance.create(
   stripe_customer_id: "123456",

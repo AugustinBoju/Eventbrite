@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Eventbrite THP</title>
+    </head>
+
+    <body>
+            <!-- //JUMBOTRON -->
+        <article class="jumbotron">
+            <div class="jumbotronContainer" id="jumbotronContainer">
+                <div class="jumbotronContainerBefore" id="jumbotronContainerBefore"></div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <header class="jumbotronHeader">
+
+                                <div class="jumbotronCategory text-white" id="jumbotronCategory">
+                                    EVENT
+                                </div>
+                                <h1 class="jumbotronTitle text-white" id="jumbotronTitle">
+                                </h1> <br/><br/><br/><br/>
+                            </header>
+                            <div class="jumbotronBody text-white" id="jumbotronBody">
+                                <h3>Here are all events</h3>
+                                <h4>
+                                    Check it, join it and create one.
+                                </h4>
+                                <h4>
+                                    Go go go !
+                                </h4>
+                            </div>
+                            <footer class="jumbotronFooter" id="jumbotronFooter">
+                                <a class="btn btn-info" href="#" role="button">
+                                    DETAILS <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                </a>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </article>
+            <h1 class="text-center">Events in the city</h1>
+
+            <div class="container">
+                <%@events.all.each do |event|%>
+                <div class="card text-white bg-info mb-3">
+                    <div class="card-body">
+                        <h5 class='card-title'><%=event.title%></h5>
+                        Date: <p class='card-text'><%=event.start_date%></p>
+                        Duration: <p class='card-text'><%=event.duration%></p>
+                        <p class='card-text'><%=event.description%></p>
+                        price: <p class='card-footer'><%=event.price%></p>
+                        Location: <p class='card-footer'><%=event.location%></p>
+                    </div>
+                </div>
+                <%end%>
+                <%= link_to "Back", :back, class: "btn btn-md btn-primary btn-block" %>
+            </div>
+    </body>
+</html>
